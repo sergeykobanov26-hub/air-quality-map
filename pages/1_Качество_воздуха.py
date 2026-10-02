@@ -152,7 +152,7 @@ for col, (emoji, value, label) in zip(legend_cols, legend_items):
 st.header("Динамика во времени")
 
 fig_ts = plot_timeseries(df_filtered, pollutant=selected_pollutant)
-st.plotly_chart(fig_ts, width='stretch')
+st.plotly_chart(fig_ts, use_container_width=True)
 
 if selected_pollutant in ("pm2_5", "pm10"):
     st.caption(
@@ -167,17 +167,17 @@ col_left, col_right = st.columns(2)
 with col_left:
     st.markdown("**Средние значения**")
     fig_bar = plot_bar_avg(df_filtered, pollutant=selected_pollutant)
-    st.plotly_chart(fig_bar, width='stretch')
+    st.plotly_chart(fig_bar, use_container_width=True)
 
 with col_right:
     st.markdown("**Распределение**")
     fig_hist = plot_distribution(df_filtered, pollutant=selected_pollutant)
-    st.plotly_chart(fig_hist, width='stretch')
+    st.plotly_chart(fig_hist, use_container_width=True)
 
 
 # ---------- Таблица ----------
 st.header("Статистика по городам")
-st.dataframe(get_city_stats(df_filtered), width='stretch')
+st.dataframe(get_city_stats(df_filtered), use_container_width=True)
 
 
 # ---------- Выводы ----------
