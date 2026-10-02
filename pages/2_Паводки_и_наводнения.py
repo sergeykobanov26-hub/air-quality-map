@@ -111,7 +111,7 @@ st.header("Карта речного стока")
 
 map_key = f"flood_map_{len(selected_rivers)}_{past_days}_{forecast_days}"
 m = create_river_map(current, metric="river_discharge")
-st_folium(m, height=500, width="stretch", returned_objects=[], key=map_key)
+st_folium(m, height=500, use_container_width=True, returned_objects=[], key=map_key)
 
 # Легенда
 st.markdown("**Уровень стока (м³/с):**")
