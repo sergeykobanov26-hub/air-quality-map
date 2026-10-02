@@ -153,7 +153,7 @@ st.info(
 st.header("Динамика во времени")
 
 fig_ts = plot_discharge_timeseries(df)
-st.plotly_chart(fig_ts, width="stretch")
+st.plotly_chart(fig_ts, use_container_width=True)
 st.caption(
     f"История за последние **{past_days}** дней + прогноз на **{forecast_days}** "
     "дней вперёд. Резкие пики на графике могут указывать на риск паводка."
@@ -161,7 +161,7 @@ st.caption(
 
 st.subheader("Сравнение по рекам")
 fig_bar = plot_discharge_bar(df)
-st.plotly_chart(fig_bar, width="stretch")
+st.plotly_chart(fig_bar, use_container_width=True)
 st.caption(
     "Средний сток за весь выбранный период. Чем выше столбец — тем больше "
     "воды несёт река."
@@ -179,7 +179,7 @@ stats = (
 )
 stats.columns = ["Река", "Регион", "Ближайший город",
                  "Средний сток", "Минимум", "Максимум"]
-st.dataframe(stats, width="stretch")
+st.dataframe(stats, use_container_width=True)
 
 
 # ---------- Выводы ----------
