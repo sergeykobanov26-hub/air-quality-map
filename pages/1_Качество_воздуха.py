@@ -124,7 +124,7 @@ current = get_city_current(df_filtered)
 m = create_map(current, pollutant=selected_pollutant)
 
 map_key = f"map_{selected_pollutant}_{len(selected_cities)}_{past_days}"
-st_folium(m, height=500, width='stretch',
+st_folium(m, height=500, use_container_width=True,
           returned_objects=[], key=map_key)
 
 # Пояснение загрязнителя
